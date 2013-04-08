@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 
 import cgi
-import html.parser
 import tempfile,os
 import sys,io,locale
 import inspect
