@@ -77,7 +77,8 @@ def printHeader(lbr='Paste target library HERE!!'):
 	print(			lbr)
 	print('		</textarea><br/>')
 	print('		<input type="submit" value="Convert"><input type="reset" value="Reset"><br/>')
-	print("</form>")
+	#print('		<input type="hidden" name="json" value=1 />')
+	print("	</form>")
 
 def printResults(libString,modString):
 	print('		<label>Converted libraries will be shown at follwing textareas.</label></br>')
@@ -97,7 +98,7 @@ def printFooter():
 	print("</html>")
 
 def printJson(lib, mod):
-	print('{"lib":"' + lib + '", "mod":"' + mod + '"}')
+	print('{\'lib\':\'' + lib + '\', \'mod\':\'' + mod + '\'}')
 
 def checkRefs():
 	form = cgi.FieldStorage()
@@ -156,7 +157,7 @@ def main():
 	lbr, json = checkRefs()
 	if len(lbr)>0:
 		lib, mod = convertLbr(lbr)
-		if json == 1:
+		if json == '1':
 			printContentType()
 			printJson(lib, mod)
 		else:
