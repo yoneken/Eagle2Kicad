@@ -98,7 +98,7 @@ def printFooter():
 	print("</html>")
 
 def printJson(lib, mod):
-	print('{\'lib\':\'' + lib + '\', \'mod\':\'' + mod + '\'}')
+	print('{"lib":"' + lib.replace(r'"',r'\"').replace("\n","\\n") + '", "mod":"' + mod.replace(r'"',r'\"').replace("\n","\\n") + '"}')
 
 def checkRefs():
 	form = cgi.FieldStorage()
