@@ -129,7 +129,7 @@ def convertLbr(lbr):
 		node = node.getroot().find("drawing").find("library")
 		
 		libr = Library(node,"Eagle2Kicad")
-		libr.writeLibrary(tmpLib,tmpMod)
+		libr.writeLibrary(tmpMod,tmpLib)
 
 		tmpLib.close()
 		tmpMod.close()
